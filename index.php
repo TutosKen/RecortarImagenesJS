@@ -19,8 +19,6 @@
             <div class="col-12 text-center">
                 <label id="label-input" class="estilo-label" for="subirImagen">Seleccionar Archivo</label>
                 <input type="file" id="subirImagen" accept="image/*" style="display:none;">
-                <div class="col-12 mb-2"><button id="continuarRecorte" class="invisible btn btn-ln btn-success btn-sm" data-toggle="modal" data-target="#subirImagenModal">Continuar recorte</button></div>
-                <div class="col-12"><button id="deshacerRecorte" class="invisible btn btn-ln btn-danger btn-sm">Deshacer recorte</button></div>
                 <div class="mt-3" id="imagenSubida"></div>
             </div>
         </div>
@@ -32,7 +30,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                 <h5 class="modal-title">Recortar Imagen</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <button type="button" class="close cerrarModal" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
                 </div>
@@ -46,7 +44,7 @@
 
                 <div class="modal-footer">
                 <button type="button" class="btn btn-primary cortar-imagen">Subir</button>
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                <button type="button" class="cerrarModal btn btn-secondary" data-dismiss="modal">Cerrar</button>
                 </div>
             </div>
         </div>

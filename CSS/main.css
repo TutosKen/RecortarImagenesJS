@@ -11,24 +11,7 @@
     background: #0275d8
 }
 
-
-.estilo-label-dis{
-    height: 25px;
-    color: white;
-    width: 150px;
-    border-radius: 4px;
-    background: dimgray
-}
-
 .estilo-label:hover{
     cursor: pointer;
     background: #266DB8;
-}
-
-.invisible{
-    display: none;
-}
-
-.btn-ln{
-    width: 150px !important;
 }

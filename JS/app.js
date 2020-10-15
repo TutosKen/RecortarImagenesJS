@@ -5,7 +5,7 @@ $(document).ready(function(){
        viewport: {
          width:300,
          height:300,
-         type:'circle' //se puede cambiar a 'square' si se desea un cuadrado en lugar de un circulo
+         type:'square' //se puede cambiar a 'circle' si se desea un circulo en lugar de un cuadrado
        },
        boundary:{
          width:300,
@@ -31,21 +31,16 @@ $(document).ready(function(){
 
        // Se muestra el modal con la imagen
        reader.readAsDataURL(this.files[0]);
+       $('#subirImagenModal').modal({
+        backdrop: 'static',
+        keyboard: false
+       });
        $('#subirImagenModal').modal('show');
-
-       if (this.files[0] != '') {
-           $("#continuarRecorte").removeClass("invisible");
-           $("#deshacerRecorte").removeClass("invisible");
-           $("#subirImagen").attr('disabled','');
-           $("#label-input").removeClass("estilo-label");
-           $("#label-input").addClass("estilo-label-dis");
-       }
      });
 
    
     // Al hacer click se sube la imagen recortada y se muestra en pantalla el resultado
      $('.cortar-imagen').click(function(event){
-        revertir();
        $cortarImagen.croppie('result', {
          type: 'canvas',
          size: 'viewport'
@@ -63,16 +58,7 @@ $(document).ready(function(){
        })
      });
 
-     $("#deshacerRecorte").click(function(){
-         revertir();
+     $(".cerrarModal").click(function(){
+        $("#subirImagen").val('');
      });
 });
-
-function revertir(){
-    $("#subirImagen").val('');
-    $("#continuarRecorte").addClass("invisible");
-    $("#deshacerRecorte").addClass("invisible");
-    $("#label-input").removeClass("estilo-label-dis");
-    $("#label-input").addClass("estilo-label");
-    $("#subirImagen").removeAttr('disabled');
-}
