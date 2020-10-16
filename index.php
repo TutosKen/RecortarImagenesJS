@@ -23,11 +23,11 @@
             </div>
 
             <div class="col-12 text-center">
-                <div id="archivoIncorrecto" class="invisible alert alert-danger" role="alert">
+                <div id="archivoIncorrecto" class="alert alert-danger" role="alert" style="display:none;">
                     Por favor seleccione un archivo de imagen valido
                 </div>
 
-                <div id="archivoGrande" class="invisible alert alert-danger" role="alert">
+                <div id="archivoGrande" class="alert alert-danger" role="alert" style="display:none;">
                     Este archivo es demasiado grande, debe ser menor a 1MB
                 </div>
             </div>

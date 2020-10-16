@@ -19,8 +19,8 @@ $(document).ready(function(){
             $(".img-thumbnail").hide();
             $(".alert").hide();
         }
-        $("#archivoGrande").addClass('invisible');
-        $("#archivoIncorrecto").addClass('invisible');
+        $("#archivoGrande").hide();
+        $("#archivoIncorrecto").hide();
         
         var archivo = $('#subirImagen').val().split('\\').pop();
         var ext = archivo.split('.').pop();
@@ -28,7 +28,7 @@ $(document).ready(function(){
 
         if (extAllowed.includes(ext)) {
           if (this.files[0].size < 1000000) {
-          $("#archivoIncorrecto").addClass('invisible');
+          $("#archivoIncorrecto").hide();
           // Se obtiene la imagen que el usuario selecciono
           var reader = new FileReader();
           reader.onload = function (event) {
@@ -47,10 +47,10 @@ $(document).ready(function(){
           });
           $('#subirImagenModal').modal('show'); 
         }else{
-          $("#archivoGrande").removeClass('invisible');
+          $("#archivoGrande").show();
         }
       }else{
-        $("#archivoIncorrecto").removeClass('invisible');
+        $("#archivoIncorrecto").show();
       }
      });
 
