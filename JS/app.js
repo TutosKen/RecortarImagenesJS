@@ -19,23 +19,39 @@ $(document).ready(function(){
             $(".img-thumbnail").hide();
             $(".alert").hide();
         }
-        // Se obtiene la imagen que el usuario selecciono
-       var reader = new FileReader();
-       reader.onload = function (event) {
-         $cortarImagen.croppie('bind', {
-           url: event.target.result
-         }).then(function(){
-           console.log('JQuery Bind Completado');
-         });
-       }
+        $("#archivoGrande").addClass('invisible');
+        $("#archivoIncorrecto").addClass('invisible');
+        
+        var archivo = $('#subirImagen').val().split('\\').pop();
+        var ext = archivo.split('.').pop();
+        var extAllowed = ['jpeg','jpg','gif','png'];
 
-       // Se muestra el modal con la imagen
-       reader.readAsDataURL(this.files[0]);
-       $('#subirImagenModal').modal({
-        backdrop: 'static',
-        keyboard: false
-       });
-       $('#subirImagenModal').modal('show');
+        if (extAllowed.includes(ext)) {
+          if (this.files[0].size < 1000000) {
+          $("#archivoIncorrecto").addClass('invisible');
+          // Se obtiene la imagen que el usuario selecciono
+          var reader = new FileReader();
+          reader.onload = function (event) {
+            $cortarImagen.croppie('bind', {
+              url: event.target.result
+            }).then(function(){
+              console.log('JQuery Bind Completado');
+            });
+          }
+
+          // Se muestra el modal con la imagen
+          reader.readAsDataURL(this.files[0]);
+          $('#subirImagenModal').modal({
+            backdrop: 'static',
+            keyboard: false
+          });
+          $('#subirImagenModal').modal('show'); 
+        }else{
+          $("#archivoGrande").removeClass('invisible');
+        }
+      }else{
+        $("#archivoIncorrecto").removeClass('invisible');
+      }
      });
 
    

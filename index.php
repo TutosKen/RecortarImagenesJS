@@ -18,8 +18,18 @@
 
             <div class="col-12 text-center">
                 <label id="label-input" class="estilo-label" for="subirImagen">Seleccionar Archivo</label>
-                <input type="file" id="subirImagen" accept="image/*" style="display:none;">
+                <input type="file" id="subirImagen" accept="image/x-png,image/gif,image/jpeg" name="file" style="display:none;">
                 <div class="mt-3" id="imagenSubida"></div>
+            </div>
+
+            <div class="col-12 text-center">
+                <div id="archivoIncorrecto" class="invisible alert alert-danger" role="alert">
+                    Por favor seleccione un archivo de imagen valido
+                </div>
+
+                <div id="archivoGrande" class="invisible alert alert-danger" role="alert">
+                    Este archivo es demasiado grande, debe ser menor a 1MB
+                </div>
             </div>
         </div>
     </div>
